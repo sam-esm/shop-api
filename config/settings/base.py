@@ -91,7 +91,8 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "sam_store.users",
-    # Your stuff: custom apps go here
+    'shop.apps.ShopConfig',
+
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -99,7 +100,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # MIGRATIONS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#migration-modules
-MIGRATION_MODULES = {"sites": "sam_store.contrib.sites.migrations"}
+# MIGRATION_MODULES = {"sites": "sam_store.contrib.sites.migrations"}
 
 # AUTHENTICATION
 # ------------------------------------------------------------------------------
@@ -341,10 +342,11 @@ CORS_URLS_REGEX = r"^/api/.*$"
 # By Default swagger ui is available only to admin user(s). You can change permission classes to change that
 # See more configuration options at https://drf-spectacular.readthedocs.io/en/latest/settings.html#settings
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Sam Store API",
+    "TITLE": "Store API",
     "DESCRIPTION": "Documentation of API endpoints of Sam Store",
     "VERSION": "1.0.0",
     "SERVE_PERMISSIONS": ["rest_framework.permissions.IsAdminUser"],
+    "SCHEMA_PATH_PREFIX": r"/api/",
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
